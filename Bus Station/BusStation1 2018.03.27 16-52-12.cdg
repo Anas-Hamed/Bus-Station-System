@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="BusStation1">
+  <ClassDiagramComponents>
+    <Class name="Bus" package="busstation1" visibility="public" xPosition="1186.0" yPosition="856.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Database" package="busstation1" visibility="public" xPosition="369.0" yPosition="10.0">
+      <Fields>
+        <Field name="conn" type="Connection" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="connect" returnType="void" visibility="public"/>
+        <Method name="insert" returnType="double" visibility="public">
+          <Argument type="int" name="tripno"/>
+          <Argument type="String" name="from"/>
+          <Argument type="String" name="to"/>
+          <Argument type="String" name="date"/>
+          <Argument type="String" name="time"/>
+          <Argument type="String" name="vehicleType"/>
+          <Argument type="int" name="noOfSeats"/>
+          <Argument type="String" name="StopType"/>
+          <Argument type="String" name="DriverName"/>
+          <Argument type="double" name="Price"/>
+        </Method>
+        <Method name="ShowTable" returnType="void" visibility="public"/>
+        <Method name="ShowTrip" returnType="int" visibility="public">
+          <Argument type="int" name="tripno"/>
+        </Method>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="tripno"/>
+        </Method>
+        <Method name="deleteAll" returnType="void" visibility="public"/>
+        <Method name="updatePrice" returnType="double" visibility="public">
+          <Argument type="int" name="tripno"/>
+          <Argument type="double" name="newPrice"/>
+        </Method>
+        <Method name="updateTime" returnType="Time" visibility="public">
+          <Argument type="int" name="tripno"/>
+          <Argument type="Time" name="newTime"/>
+        </Method>
+        <Method name="updateNoOfSeats" returnType="int" visibility="public">
+          <Argument type="int" name="tripno"/>
+          <Argument type="int" name="noOfSeats"/>
+        </Method>
+        <Method name="getNoOfSeats" returnType="int" visibility="public">
+          <Argument type="int" name="tripno"/>
+        </Method>
+        <Method name="getTickets" returnType="void" visibility="public"/>
+        <Method name="getNoOfTrips" returnType="int" visibility="public"/>
+        <Method name="getFirstTripno" returnType="int" visibility="public"/>
+        <Method name="getManger" returnType="int" visibility="public">
+          <Argument type="int" name="no"/>
+        </Method>
+        <Method name="disconnect" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DatabaseConnector" package="busstation1" visibility="public" xPosition="787.0" yPosition="476.0">
+      <Fields>
+        <Field name="dp" type="Database" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getMangers" returnType="ArrayList&lt;Mangers&gt;" visibility="public"/>
+        <Method name="UpdateBuyTicket" returnType="int" visibility="public">
+          <Argument type="int" name="tripNo"/>
+          <Argument type="int" name="NoOfTickets"/>
+        </Method>
+        <Method name="UpdateDatabase" returnType="ArrayList&lt;Mangers&gt;" visibility="public">
+          <Argument type="ArrayList&lt;Mangers&gt;" name="m"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Employees" package="busstation1" visibility="public" isAbstract="true" xPosition="44.0" yPosition="816.0">
+      <Fields>
+        <Field name="Name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="String" visibility="public">
+          <Argument type="String" name="Name"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Limousine" package="busstation1" visibility="public" xPosition="1977.0" yPosition="1212.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Mangers" package="busstation1" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="ID" type="int" visibility="private"/>
+        <Field name="username" type="String" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getID" returnType="int" visibility="public"/>
+        <Method name="setID" returnType="int" visibility="public">
+          <Argument type="int" name="ID"/>
+        </Method>
+        <Method name="getUsername" returnType="String" visibility="public"/>
+        <Method name="setUsername" returnType="String" visibility="public">
+          <Argument type="String" name="username"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="String" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MiniBus" package="busstation1" visibility="public" xPosition="1749.0" yPosition="1263.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="NewClass" package="busstation1" visibility="public" xPosition="2238.0" yPosition="933.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Ticket" package="busstation1" visibility="public" xPosition="652.0" yPosition="769.0">
+      <Fields>
+        <Field name="tripno" type="int" visibility="private"/>
+        <Field name="From" type="String" visibility="private"/>
+        <Field name="To" type="String" visibility="private"/>
+        <Field name="stopType" type="String" visibility="private"/>
+        <Field name="vehicle" type="Vehicle" visibility="private"/>
+        <Field name="date" type="Date" visibility="private"/>
+        <Field name="time" type="Time" visibility="private"/>
+        <Field name="NoOfAvilableSeats" type="int" visibility="private"/>
+        <Field name="price" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getPrice" returnType="double" visibility="public"/>
+        <Method name="setPrice" returnType="double" visibility="public">
+          <Argument type="double" name="price"/>
+        </Method>
+        <Method name="getNoOfAvilableSeats" returnType="int" visibility="public"/>
+        <Method name="setNoOfAvilableSeats" returnType="int" visibility="public">
+          <Argument type="int" name="NoOfAvilableSeats"/>
+        </Method>
+        <Method name="getTripno" returnType="int" visibility="public"/>
+        <Method name="setTripno" returnType="int" visibility="public">
+          <Argument type="int" name="tripno"/>
+        </Method>
+        <Method name="getFrom" returnType="String" visibility="public"/>
+        <Method name="setFrom" returnType="String" visibility="public">
+          <Argument type="String" name="From"/>
+        </Method>
+        <Method name="getTo" returnType="String" visibility="public"/>
+        <Method name="setTo" returnType="String" visibility="public">
+          <Argument type="String" name="To"/>
+        </Method>
+        <Method name="getStopType" returnType="String" visibility="public"/>
+        <Method name="setStopType" returnType="String" visibility="public">
+          <Argument type="String" name="stopType"/>
+        </Method>
+        <Method name="getVehicle" returnType="Vehicle" visibility="public"/>
+        <Method name="setVehicle" returnType="Vehicle" visibility="public">
+          <Argument type="Vehicle" name="vehicle"/>
+        </Method>
+        <Method name="getDate" returnType="Date" visibility="public"/>
+        <Method name="setDate" returnType="Date" visibility="public">
+          <Argument type="Date" name="date"/>
+        </Method>
+        <Method name="getTime" returnType="Time" visibility="public"/>
+        <Method name="setTime" returnType="Time" visibility="public">
+          <Argument type="Time" name="time"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TripActions" package="busstation1" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="dpc" type="DatabaseConnector" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="SetDate" returnType="int" visibility="public">
+          <Argument type="int" name="day"/>
+          <Argument type="int" name="month"/>
+          <Argument type="int" name="year"/>
+        </Method>
+        <Method name="SetTime" returnType="int" visibility="public">
+          <Argument type="int" name="hour"/>
+          <Argument type="int" name="minute"/>
+        </Method>
+        <Method name="SetVehicle" returnType="String" visibility="public">
+          <Argument type="String" name="VehicleType"/>
+        </Method>
+        <Method name="BuyTicket" returnType="int" visibility="public">
+          <Argument type="int" name="tripNo"/>
+          <Argument type="int" name="NoOfTickets"/>
+        </Method>
+        <Method name="Login" returnType="String" visibility="public">
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="Password"/>
+        </Method>
+        <Method name="NewTrip" returnType="double" visibility="public">
+          <Argument type="String" name="from"/>
+          <Argument type="String" name="To"/>
+          <Argument type="Date" name="Date"/>
+          <Argument type="Time" name="time"/>
+          <Argument type="Vehicle" name="vehicle"/>
+          <Argument type="String" name="stopType"/>
+          <Argument type="String" name="driverName"/>
+          <Argument type="double" name="price"/>
+        </Method>
+        <Method name="EditTripPrice" returnType="int" visibility="public">
+          <Argument type="double" name="NewPrice"/>
+          <Argument type="int" name="tripNo"/>
+        </Method>
+        <Method name="EditTripTime" returnType="int" visibility="public">
+          <Argument type="Time" name="NewTime"/>
+          <Argument type="int" name="tripNo"/>
+        </Method>
+        <Method name="DeleteTrip" returnType="int" visibility="public">
+          <Argument type="int" name="tripNo"/>
+        </Method>
+        <Method name="ShowAllTrips" returnType="void" visibility="public"/>
+        <Method name="ShowTrips" returnType="Date" visibility="public">
+          <Argument type="String" name="from"/>
+          <Argument type="String" name="To"/>
+          <Argument type="Date" name="Date"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Vehicle" package="busstation1" visibility="public" isAbstract="true" xPosition="1965.0" yPosition="866.0">
+      <Fields>
+        <Field name="noOfSeats" type="int" visibility="protected"/>
+        <Field name="priceFactor" type="double" visibility="protected"/>
+        <Field name="Driver" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setDriver" returnType="String" visibility="public">
+          <Argument type="String" name="Driver"/>
+        </Method>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="CustomerAction" package="busstation1" visibility="public" xPosition="1328.0" yPosition="269.0">
+      <Methods>
+        <Method name="BuyTicket" returnType="int" visibility="package">
+          <Argument type="int" name="tripNo"/>
+          <Argument type="int" name="NoOfTickets"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="EmployeeAction" package="busstation1" visibility="public" xPosition="1585.0" yPosition="51.0">
+      <Methods>
+        <Method name="Login" returnType="String" visibility="package">
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="Password"/>
+        </Method>
+        <Method name="NewTrip" returnType="double" visibility="package">
+          <Argument type="String" name="from"/>
+          <Argument type="String" name="To"/>
+          <Argument type="Date" name="Date"/>
+          <Argument type="Time" name="time"/>
+          <Argument type="Vehicle" name="vehicle"/>
+          <Argument type="String" name="stopType"/>
+          <Argument type="String" name="driverName"/>
+          <Argument type="double" name="price"/>
+        </Method>
+        <Method name="EditTripPrice" returnType="int" visibility="package">
+          <Argument type="double" name="NewPrice"/>
+          <Argument type="int" name="tripNo"/>
+        </Method>
+        <Method name="EditTripTime" returnType="int" visibility="package">
+          <Argument type="Time" name="NewTime"/>
+          <Argument type="int" name="tripNo"/>
+        </Method>
+        <Method name="DeleteTrip" returnType="int" visibility="package">
+          <Argument type="int" name="tripNo"/>
+        </Method>
+        <Method name="ShowAllTrips" returnType="void" visibility="package"/>
+        <Method name="ShowTrips" returnType="Date" visibility="package">
+          <Argument type="String" name="from"/>
+          <Argument type="String" name="To"/>
+          <Argument type="Date" name="Date"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="GUI" package="" visibility="public" xPosition="2297.0" yPosition="767.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="busstation1.TripActions" target="busstation1.Vehicle" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="busstation1.Database" target="busstation1.Mangers" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dp" source="busstation1.DatabaseConnector" target="busstation1.Database" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="busstation1.Ticket" target="busstation1.Vehicle" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="GUI" target="busstation1.CustomerAction"/>
+    <HasRelation name="dpc" source="busstation1.TripActions" target="busstation1.DatabaseConnector" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="busstation1.TripActions" target="busstation1.EmployeeAction"/>
+    <IsRelation name="is" source="busstation1.Limousine" target="busstation1.Vehicle"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="busstation1.TripActions" target="busstation1.CustomerAction"/>
+    <IsRelation name="is" source="busstation1.Bus" target="busstation1.Vehicle"/>
+    <UseRelation source="busstation1.DatabaseConnector" target="busstation1.Mangers" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="busstation1.MiniBus" target="busstation1.Vehicle"/>
+    <HasRelation name="vehicle" source="busstation1.Ticket" target="busstation1.Vehicle" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="GUI" target="busstation1.EmployeeAction"/>
+    <IsRelation name="is" source="busstation1.Mangers" target="busstation1.Employees"/>
+    <UseRelation source="busstation1.EmployeeAction" target="busstation1.Vehicle" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="GUI" target="busstation1.NewClass"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
